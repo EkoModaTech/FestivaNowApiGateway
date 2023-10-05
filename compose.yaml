@@ -54,7 +54,6 @@ services:
 
   echoserver:
     image: ealen/echo-server
-    container_name: echoserver
     hostname: echoserver
     networks:
       - core
@@ -169,7 +168,6 @@ services:
 
   echoserver-qa:
     image: ealen/echo-server
-    container_name: echoserver
     hostname: echoserver
     networks:
       - core-qa
