@@ -54,7 +54,6 @@ services:
 
   echoserver:
     image: ealen/echo-server
-    container_name: echoserver
     hostname: echoserver
     networks:
       - core
@@ -122,7 +121,7 @@ services:
     volumes:
     - ./dashboard_conf/conf.yaml:/usr/local/apisix-dashboard/conf/conf.yaml
     ports:
-    - "9000:9000"
+    - "29000:9000"
     networks:
       - core-qa
     environment:
@@ -169,7 +168,6 @@ services:
 
   echoserver-qa:
     image: ealen/echo-server
-    container_name: echoserver
     hostname: echoserver
     networks:
       - core-qa

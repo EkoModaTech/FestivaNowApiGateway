@@ -6,7 +6,7 @@ conf:
     - 0.0.0.0/0
   etcd:
     endpoints:          # supports defining multiple etcd host addresses for an etcd cluster
-      - ${{URL_ETCD:=}} #"http://etcd:2379"
+      - "http://etcd:2379"
                           # yamllint disable rule:comments-indentation
                           # etcd basic auth info
     # username: "root"    # ignore etcd username if not enable etcd auth
@@ -42,8 +42,8 @@ authentication:
                         # if it's default value, when `manager api` start, it will generate a random string to replace it.
   expire_time: 3600     # jwt token expire time, in second
   users:                # yamllint enable rule:comments-indentation
-    - username: ${{APISIX_DASHBOARD_USER:=}}   # username and password for login `manager api`
-      password: ${{APISIX_DASHBOARD_PASSWORD:=}}
+    - username: admin   # username and password for login `manager api`
+      password: admin1
 
 plugins:                          # plugin list (sorted in alphabetical order)
   - api-breaker

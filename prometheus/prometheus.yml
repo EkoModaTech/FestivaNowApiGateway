@@ -17,7 +17,7 @@ scrape_configs:
     scrape_timeout: 15s
     metrics_path: /actuator/metrics
     eureka_sd_configs:
-      - server: http://eureka-server:8761/eureka
+      - server: http://eureka:8761/eureka
         refresh_interval: 30s
     relabel_configs:
       - source_labels: [__meta_eureka_app_name]
