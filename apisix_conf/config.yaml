@@ -1,3 +1,6 @@
+apisix:
+    router:
+        http: 'radixtree_uri_with_parameter'
 deployment:
   role: traditional
   role_traditional:

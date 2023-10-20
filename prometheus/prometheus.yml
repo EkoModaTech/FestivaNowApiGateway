@@ -26,3 +26,9 @@ scrape_configs:
         target_label: __metrics_path__
       - source_labels: [__address__]
         target_label: instance
+
+  - job_name: apisix
+    scrape_interval: 15s # This value will be related to the time range of the rate function in Prometheus QL. The time range in the rate function should be at least twice this value.
+    metrics_path: "/apisix/prometheus/metrics"
+    static_configs:
+      - targets: ["apisix:9091"]
