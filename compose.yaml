@@ -7,7 +7,7 @@ services:
     volumes:
     - ./dashboard_conf/conf.yaml:/usr/local/apisix-dashboard/conf/conf.yaml
     ports:
-    - "9000:9000"
+    - "9002:9000"
     networks:
       - core
     environment:
@@ -67,6 +67,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: keycloak_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
 
   keycloak:
     image: keycloak/keycloak:20.0.5
@@ -181,6 +183,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: keycloak_db
+    volumes:
+      - pgdata_qa:/var/lib/postgresql/data
 
   keycloak-qa:
     image: keycloak/keycloak:20.0.5
@@ -242,3 +246,5 @@ volumes:
     driver: local
   etcd_data_qa:
     driver: local
+  pgdata:
+  pgdata_qa:
